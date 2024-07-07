@@ -5,12 +5,8 @@ image = [];
 
 for(i = 0; i <= 53; i++) {
   image[i] = {};
-  image[i].image = Image(lagtrain_ + i + .png);
+  image[i].image = Image("lagtrain_" + i + ".png");
   image[i].sprite = Sprite(image[i].image);
-  image[i].sprite.SetOpacity(0);
-  image[i].x = Window.GetX() + Window.GetWidth() / 2 - image[i].image.GetWidth() / 2;
-  image[i].y = Window.GetY() + Window.GetHeight() / 2 - image[i].image.GetHeight() / 2;
-  image[i].sprite.SetPosition(image[i].x, image[i].y, 0);
 }
 
 index = 1;
@@ -31,4 +27,4 @@ fun boot_callback() {
 }
 
 Plymouth.SetRefreshFunction(boot_callback);
-Plymouth.SetQuitFunction(boot_callback)
+Plymouth.SetQuitFunction(boot_callback);
