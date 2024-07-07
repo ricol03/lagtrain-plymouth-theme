@@ -31,4 +31,4 @@ fun boot_callback() {
 Plymouth.SetRefreshFunction(boot_callback);
 
 // Adjust the refresh rate to control the image change speed
-Plymouth.SetRefreshRate(60); // 60 FPS
+Plymouth.SetRefreshRate(12); // 12 FPS
