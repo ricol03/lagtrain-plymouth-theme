@@ -3,7 +3,7 @@ Window.SetBackgroundBottomColor(0, 0, 0);
 
 image = [];
 
-for (i = 0; i <= 53; i++) {
+/*for (i = 0; i <= 53; i++) {
   image[i].image = Image("lagtrain_" + i + ".png");
   image[i].sprite = Sprite(image[i].image);
   image[i].sprite.SetOpacity(0); // Initially, set all images to transparent
@@ -20,11 +20,11 @@ for (i = 0; i <= 53; i++) {
   } else {
     plymouth.System.Log("Failed to load image lagtrain_" + i + ".png");
   }
-}
+}*/
 
 fun boot_callback() {
   // Set the current image to transparent
-  image[index].sprite.SetOpacity(0);
+  /*image[index].sprite.SetOpacity(0);
 
   // Move to the next image
   index++;
@@ -33,7 +33,10 @@ fun boot_callback() {
   }
 
   // Set the next image to fully opaque
-  image[index].sprite.SetOpacity(1);
+  image[index].sprite.SetOpacity(1);*/
+  
+  image[0].image = Image("lagtrain_23.png");
+  image[0].sprite = Sprite(image[0].image);
 }
 
 Plymouth.SetRefreshFunction(boot_callback);
