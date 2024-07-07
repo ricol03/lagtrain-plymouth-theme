@@ -3,7 +3,7 @@ Window.SetBackgroundBottomColor(0, 0, 0);
 
 image = [];
 
-for (i = 0; i <= 53; i++) {
+for (i = 0; i <= 52; i++) {
   image[i].image = Image("lagtrain_" + i + ".png");
   image[i].sprite = Sprite(image[i].image);
   image[i].sprite.SetOpacity(0); // Initially, set all images to transparent
@@ -20,7 +20,7 @@ fun boot_callback() {
 
   // Move to the next image
   index++;
-  if (index > 53) {
+  if (index > 52) {
     index = 0;
   }
 
