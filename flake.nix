@@ -1,5 +1,5 @@
 {
-  #description = "Lagtrain Plymouth Theme";
+  description = "Lagtrain Plymouth Theme";
   
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 

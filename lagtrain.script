@@ -1,0 +1,30 @@
+Window.SetBackgroundTopColor (0, 0, 0);
+Window.SetBackgroundBottomColor (0, 0, 0);
+
+image = [];
+
+for(i = 0; i <= 53; i++) {
+  image[i] = {};
+  image[i].image = Image("lagtrain_" + i + ".png");
+  image[i].sprite = Sprite(image[i].image);
+}
+
+index = 1;
+
+fun boot_callback() {
+  if(index >= 53 + 1) {
+    index = 1;
+  } else {
+    for(i = 0; i <= 53; i++) {
+      if(index != i) {
+        image[i].sprite.SetOpacity(0);
+      } else {
+        image[i].sprite.SetOpacity(1);
+      }
+    }
+    index++;
+  }
+}
+
+Plymouth.SetRefreshFunction(boot_callback);
+Plymouth.SetQuitFunction(boot_callback);
