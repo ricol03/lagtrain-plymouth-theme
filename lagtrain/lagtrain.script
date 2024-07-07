@@ -1,30 +1,36 @@
-Window.SetBackgroundTopColor (0, 0, 0);
-Window.SetBackgroundBottomColor (0, 0, 0);
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
 
 image = [];
 
-for(i = 0; i <= 53; i++) {
+for (i = 0; i <= 53; i++) {
   image[i] = {};
   image[i].image = Image("lagtrain_" + i + ".png");
   image[i].sprite = Sprite(image[i].image);
+  image[i].sprite.SetOpacity(0); // Initially, set all images to transparent
+  image[i].sprite.SetZ(-1000);   // Set all images to the background
 }
 
-index = 1;
+// Display the first image initially
+image[0].sprite.SetOpacity(1);
+
+index = 0; // Start from the first image
 
 fun boot_callback() {
-  if(index >= 53 + 1) {
-    index = 1;
-  } else {
-    for(i = 0; i <= 53; i++) {
-      if(index != i) {
-        image[i].sprite.SetOpacity(0);
-      } else {
-        image[i].sprite.SetOpacity(1);
-      }
-    }
-    index++;
+  // Set the current image to transparent
+  image[index].sprite.SetOpacity(0);
+
+  // Move to the next image
+  index++;
+  if (index > 53) {
+    index = 0;
   }
+
+  // Set the next image to fully opaque
+  image[index].sprite.SetOpacity(1);
 }
 
 Plymouth.SetRefreshFunction(boot_callback);
-Plymouth.SetQuitFunction(boot_callback);
+
+// Adjust the refresh rate to control the image change speed
+Plymouth.SetRefreshRate(1); // 1 FPS (one image per second)
