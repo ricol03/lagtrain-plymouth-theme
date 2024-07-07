@@ -4,11 +4,9 @@ Window.SetBackgroundBottomColor(0, 0, 0);
 image = [];
 
 for (i = 0; i <= 53; i++) {
-  image[i] = {};
   image[i].image = Image("lagtrain_" + i + ".png");
   image[i].sprite = Sprite(image[i].image);
   image[i].sprite.SetOpacity(0); // Initially, set all images to transparent
-  image[i].sprite.SetZ(-1000);   // Set all images to the background
 }
 
 // Display the first image initially
@@ -33,4 +31,4 @@ fun boot_callback() {
 Plymouth.SetRefreshFunction(boot_callback);
 
 // Adjust the refresh rate to control the image change speed
-Plymouth.SetRefreshRate(1); // 1 FPS (one image per second)
+Plymouth.SetRefreshRate(60); // 60 FPS
