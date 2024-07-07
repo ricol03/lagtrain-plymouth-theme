@@ -37,6 +37,7 @@ fun boot_callback() {
   
   image[0].image = Image("lagtrain_23.png");
   image[0].sprite = Sprite(image[0].image);
+  image[0].sprite.SetOpacity(1);
 }
 
 Plymouth.SetRefreshFunction(boot_callback);
