@@ -14,6 +14,14 @@ image[0].sprite.SetOpacity(1);
 
 index = 0; // Start from the first image
 
+for (i = 0; i <= 53; i++) {
+  if (image[i].image !== null) {
+    plymouth.System.Log("Image lagtrain_" + i + ".png loaded successfully");
+  } else {
+    plymouth.System.Log("Failed to load image lagtrain_" + i + ".png");
+  }
+}
+
 fun boot_callback() {
   // Set the current image to transparent
   image[index].sprite.SetOpacity(0);
